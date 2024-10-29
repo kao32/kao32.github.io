@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Navigation bar styling */
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .about-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .about-section img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-info {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .contact-info a {
+            display: block;
+            margin: 5px 0;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            color: #f4a261;
+        }
+
+        /* Slideshow styling */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            display: none;
+        }
+
+        .slideshow-container img.active {
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            .container {
+                width: 95%;
+            }
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .about-section img {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<header id="home">
+    <h1>Welcome to My Portfolio</h1>
+</header>
+
+<div class="container" id="about">
+    <h2>About Me</h2>
+    <div class="about-section">
+        <!-- Replaced profile picture with Saber -->
+        <img src="https://your-saber-image-link.jpg" alt="Saber from Fate/Stay Night">
+        <p>Hi, I'm Mingyu! I'm a student at Stella Maris, and I love anime passionately.</p>
+    </div>
+
+    <!-- Slideshow Section -->
+    <h2>Favorite Anime Characters</h2>
+    <div class="slideshow-container">
+        <!-- Add actual image URLs for Saber, Eris Greyrat, and Roxy Migurdia -->
+        <img src="https://your-saber-image-link.jpg" alt="Saber" class="active">
+        <img src="https://your-eris-greyrat-image-link.jpg" alt="Eris Greyrat">
+        <img src="https://your-roxy-migurdia-image-link.jpg" alt="Roxy Migurdia">
+    </div>
+
+    <h2>Contact Details</h2>
+    <div class="contact-info" id="contact">
+        <p>Name: Mingyu Kao</p>
+        <a href="tel:+123456789">Phone: +123 456 789</a>
+        <a href="mailto:kaomingyu917@gmail.com">Email: kaomingyu917@gmail.com</a>
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank">LinkedIn: linkedin.com/in/yourprofile</a>
+    </div>
+</div>
+
+<footer>
+    <p>© 2024 My Portfolio. All rights reserved.</p>
+</footer>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelectorAll('.slideshow-container img');
+
+    function showSlides() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active');
+            if (index === slideIndex) {
+                slide.classList.add('active');
+            }
+        });
+        slideIndex = (slideIndex + 1) % slides.length;
+        setTimeout(showSlides, 3000); // Change image every 3 seconds
+    }
+
+    showSlides();
+</script>
+
+</body>
+</html>
